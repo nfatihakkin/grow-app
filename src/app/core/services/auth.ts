@@ -11,9 +11,10 @@ export class Auth {
     this._isLoggedIn.set(stored === 'true');
   }
 
-  get isLoggedIn() {
-    return this._isLoggedIn.asReadonly();
+  isLoggedIn(): boolean {
+    return this._isLoggedIn();
   }
+
 
   login(username: string, password: string): boolean {
     if (username === 'admin' && password === 'password') {
